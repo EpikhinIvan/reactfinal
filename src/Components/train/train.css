@@ -1,6 +1,23 @@
-ul {
-    color: white;
+.training-page {
+    text-align: center;
+    padding: 20px;
 }
-h2 {
-    color: white;
+
+.training-card {
+    cursor: pointer;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #e4ecfc;
+    border-radius: 8px;
+    background-color: #e4ecfc;
+    width: 50%;
+}
+
+.training-session {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 50%;
+    background-color: #e4ecfc;
+    border: 1px solid #e4ecfc;
 }

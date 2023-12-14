@@ -24,12 +24,12 @@ div h1{
     
 }
 
-button{
-    width: 200px;
+.rd{
+    width: 220px;
     height: 60px;
-    background-color: rgb(74, 76, 114);
-    color: rgb(255, 255, 255);
+    background-color: rgb(66 74 211);
+    color: white;
     border-radius: 40px;
-    border-color:  rgb(74, 76, 114);
+    border-color:  rgb(66 74 211);
     font-size: 24px;
 }

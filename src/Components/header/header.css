@@ -3,10 +3,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    color: #fff;
+    color: white;
     height: 80px;
     margin: 0 auto;
-
 }
 
 .gym {
@@ -17,11 +16,7 @@
     height: 60px;
     width: 100px;
     margin-left: 10px;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
+    cursor: pointer;
 }
 
 .submenu {
@@ -45,7 +40,6 @@
 }
 
 .submenu a:hover {
-   
     text-decoration: underline;
 }
 
@@ -54,7 +48,7 @@
     height: 40px;
     cursor: pointer;
     margin-right: 20px;
-    background-color: #fff;
+    background-color: white;
 }
 
 .navMenu:hover{
