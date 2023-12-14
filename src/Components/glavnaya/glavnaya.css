@@ -1,0 +1,35 @@
+body {
+    background: url('https://lirp.cdn-website.com/16f8f7e5/dms3rep/multi/opt/Slider_2-1920x930-1920w.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+div h1{
+    color: white;
+    font-size: 40px;
+}
+
+.title{
+    margin: 0 auto;
+    width: 860px;
+}
+
+.content{ 
+    margin-top: 10em;
+}
+
+.button{
+    padding-top: 6rem;
+    margin: 0 auto;
+    width: 200px;
+    
+}
+
+button{
+    width: 200px;
+    height: 60px;
+    background-color: rgb(74, 76, 114);
+    color: rgb(255, 255, 255);
+    border-radius: 40px;
+    border-color:  rgb(74, 76, 114);
+    font-size: 24px;
+}
