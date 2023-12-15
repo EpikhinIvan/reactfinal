@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TrainingCard = ({onStartTraining }) => {
+const TrainingCard = ({ onStartTraining }) => {
   return (
     <div className="training-card" onClick={onStartTraining}>
-      <h3>Тренировка груди</h3>
+      <h3>Нажмите для начала тренировки</h3>
     </div>
   );
 };

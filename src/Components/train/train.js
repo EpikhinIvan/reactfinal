@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import './train.css';
 import TrainingCard from '../trainingcard/trainingcard';
 import TrainingSession from '../trainingsession/trainingsession';
+import TrainingWrapper from '../trainingwrapper/trainingwrapper';
 
-class Train extends Component {
+export default class Train extends Component {
   state = {
     showTraining: false,
     hasError: false,
@@ -27,16 +28,15 @@ class Train extends Component {
 
     return (
       <div className="training-page">
-        {!showTraining && (
-          <TrainingCard onStartTraining={this.startTraining} />
-        )}
-
-        {showTraining && (
-          <TrainingSession initialTime={60} />
-        )}
+        {!showTraining 
+          ? <TrainingCard onStartTraining={this.startTraining} />
+          : <TrainingWrapper>
+              <TrainingSession initialTime={30} />
+              <TrainingSession initialTime={45} />
+            </TrainingWrapper>
+        }
       </div>
     );
   }
 }
 
-export default Train;

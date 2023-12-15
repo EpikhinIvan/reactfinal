@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import AppHeader from '../header'
 import Glavnaya from '../glavnaya'
-import './app.css'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import TrainPage from '../train';

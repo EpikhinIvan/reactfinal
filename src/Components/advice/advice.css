@@ -1,0 +1,28 @@
+.tips-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    width: 700px;
+  }
+  
+.tips-page h2{
+    color: white;
+    font-size: 30px;
+}
+  .tips-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tip {
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .tip h3 {
+    margin-top: 0;
+  }
+  

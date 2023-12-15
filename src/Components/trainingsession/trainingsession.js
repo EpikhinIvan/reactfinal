@@ -51,7 +51,7 @@ class TrainingSession extends Component {
 
     resetTimer = () => {
         this.stopTimer();
-        this.setState({ timerSeconds: 10 });
+        this.setState({ timerSeconds: 30 });
     };
 
     render() {
@@ -59,21 +59,10 @@ class TrainingSession extends Component {
 
         return (
             <div className="training-session">
-                <h2>Тренировка груди</h2>
+                <h2>Тренировка</h2>
                 <p>Оставшееся время: {timerSeconds} сек</p>
-                <div className='train'>
-                    <div>
-                        <input type="checkbox" id="exercise1" />
-                        <label htmlFor="exercise1">Отжимания узкие- 12x4</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="exercise2" />
-                        <label htmlFor="exercise2">Отжимания широкие- 12x4</label>
-                    </div>
-                </div>
             </div>
         );
     }
 }
-
 export default TrainingSession;

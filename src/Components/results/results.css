@@ -1,0 +1,30 @@
+.results-page {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  .results-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 30px;
+  }
+  
+  .results-page ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .results-page li {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+  
+  .results-page li h3 {
+    margin-top: 0;
+  }
+  
