@@ -8,10 +8,11 @@ export default class AppHeader extends Component {
     isMenuOpen: false,
   };
 
-
+//создаем метод  который меняет состояние открытости меню 
   mouseEnter = () => {
     this.setState({ isMenuOpen: true });
   };
+//создаем метод  который меняет состояние открытости меню 
 
   mouseLeave = () => {
     this.setState({ isMenuOpen: false });

@@ -11,10 +11,10 @@ export default class Glavnaya extends Component {
         </div>
         <div className='button'><br />
           <Link to="/train">
-            <button className='rd'>Начать сейчас!</button>
+            <button className='rd'>Начать сейчас!</button> 
           </Link>
         </div>
-      </div>
+      </div>//используем компонент link чтобы сделать марштруты
     )
   }
 }

@@ -12,11 +12,12 @@ export default class Contacts extends Component {
     };
   }
 
-  handleChange = (e) => {
+  
+  handleChange = (e) => { // Обработчик изменения значений в полях формы
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = (e) => {
+  handleSubmit = (e) => { // Обработчик отправки формы
     e.preventDefault();
     const message = this.messageRef.current.value; 
     const { name, email } = this.state;

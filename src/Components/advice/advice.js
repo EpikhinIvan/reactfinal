@@ -17,7 +17,7 @@ export default class Advice extends Component {
       <div className="tips-page">
         <h2>Советы для здоровья и фитнеса</h2>
         <ul className="tips-list">
-          {tips.map(tip => (
+          {tips.map(tip => ( // используем map для перебора элементов в массиве и выводим
             <li key={tip.id} className="tip">
               <h3>{tip.title}</h3>
               <p>{tip.content}</p>

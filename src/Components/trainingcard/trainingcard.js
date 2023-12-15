@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TrainingCard = ({ onStartTraining }) => {
+const TrainingCard = ({ onStartTraining }) => {   // получает пропс onStartTraining
   return (
-    <div className="training-card" onClick={onStartTraining}>
+    <div className="training-card" onClick={onStartTraining}> 
       <h3>Нажмите для начала тренировки</h3>
-    </div>
+    </div>// обработчик клика
   );
 };
 

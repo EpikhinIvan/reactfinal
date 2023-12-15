@@ -10,24 +10,29 @@ class TrainingSession extends Component {
         this.timer = null;
     }
 
+    // компонент жизненного цикла
     componentDidMount() {
-        this.startTimer();
-        document.addEventListener('keydown', this.handleKeyPress);
+        this.startTimer(); // Запускает таймер при монтировании компонента
+        document.addEventListener('keydown', this.handleKeyPress); // слушает ивенты нажатия клавиш
     }
 
+    // компонент жизненного цикла
     componentWillUnmount() {
-        this.stopTimer();
-        document.removeEventListener('keydown', this.handleKeyPress);
+        this.stopTimer(); // Останавливает таймер перед размонтированием компонента
+        document.removeEventListener('keydown', this.handleKeyPress); // убрать слушатель событий нажатия клавиш
     }
 
+    // метод получающий событие
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
-            this.toggleTimer();
+            this.toggleTimer(); // переключить таймер при нажатии на клавишу ENTER
         } else if (event.key === 'Escape') {
-            this.resetTimer();
+            this.resetTimer(); // сбросить таймер при нажатии на клавишу ESC
         }
     };
 
+
+    //переключает между запуском и остановкой таймера
     toggleTimer = () => {
         if (this.state.timerRunning) {
             this.stopTimer();
@@ -39,19 +44,19 @@ class TrainingSession extends Component {
     startTimer = () => {
         this.timer = setInterval(() => {
             this.setState(prevState => ({ timerSeconds: prevState.timerSeconds - 1 }));
-        }, 1000);
+        }, 1000); // Запускает интервал таймера, обновляя timerSeconds каждую секунду.
         this.setState({ timerRunning: true });
     };
 
     stopTimer = () => {
-        clearInterval(this.timer);
-        this.timer = null;
-        this.setState({ timerRunning: false });
+        clearInterval(this.timer); //останавливает интервал таймера
+        this.timer = null; // очищает таймер
+        this.setState({ timerRunning: false }); // устанавливает состояние на false
     };
 
-    resetTimer = () => {
-        this.stopTimer();
-        this.setState({ timerSeconds: 30 });
+    resetTimer = () => { 
+        this.stopTimer(); //остановить таймер при сбросе
+        this.setState({ timerSeconds: 30 }); //установить timerSeconds 30с
     };
 
     render() {

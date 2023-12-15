@@ -5,7 +5,7 @@ const RecipeSearch = ({ onSearchChange }) => {
         <input
             type="text"
             className="recipe-search-input"
-            onChange={e => onSearchChange(e.target.value)}
+            onChange={e => onSearchChange(e.target.value)}//передается текущее состояние текстового поля
             placeholder="Поиск рецептов"
         />
     );

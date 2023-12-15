@@ -14,7 +14,7 @@ export default class Coach extends Component {
       <div className="coaches-page">
         <h2>Наши тренеры</h2>
         <div className="coaches-list">
-          {this.state.coaches.map(coach => (
+          {this.state.coaches.map(coach => ( //c помощью метода map перебираем каждый элемент и по итогу выводим
             <div key={coach.id} className="coach">
               <img src={coach.img} alt={coach.name} className="coach-img" />
               <h3>{coach.name}</h3>

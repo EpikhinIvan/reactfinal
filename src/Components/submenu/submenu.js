@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Submenu = () => {
   return (
-    <div className="submenu">
+    <div className="submenu">{/* Ссылки на страницы с использованием React Router */}
       <Link to="/">Главная страница</Link>
       <Link to="/train">Тренировки</Link>
       <Link to="/nutrition">Питание</Link>

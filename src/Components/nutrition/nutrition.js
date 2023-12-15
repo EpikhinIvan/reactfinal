@@ -17,15 +17,15 @@ export default class Nutrition extends Component {
     const { recipes, searchQuery, selectedCategory } = this.state;
 
     const filteredRecipes = recipes
-      .filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase()))
+      .filter(recipe => recipe.title.toLowerCase().includes(searchQuery.toLowerCase())) // используется filter который создает новый массив 
       .filter(recipe => selectedCategory === 'Все' || recipe.category === selectedCategory);
 
-    return (
+    return (//компонентам передается onserachchange и oncategorychange
       <div className="nutrition">
-        <RecipeSearch onSearchChange={query => this.setState({ searchQuery: query })} />
+        <RecipeSearch onSearchChange={query => this.setState({ searchQuery: query })} /> 
         <RecipeFilter onCategoryChange={category => this.setState({ selectedCategory: category })} />
         <ul>
-          {filteredRecipes.map(recipe => (
+          {filteredRecipes.map(recipe => (//проходится по каждым элемента filteredrecipes и показывает "вставленные " значения
             <li key={recipe.id}>
               <h3>{recipe.title}</h3>
               <p>Категория: {recipe.category}</p>

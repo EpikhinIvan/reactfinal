@@ -6,7 +6,7 @@ const RecipeFilter = ({ onCategoryChange }) => {
             <option value="Все">Все</option>
             <option value="Салат">Салат</option>
             <option value="Напиток">Напиток</option>
-        </select>
+        </select>// меняет выбор категории
     );
 };
 

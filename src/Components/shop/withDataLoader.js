@@ -10,14 +10,14 @@ const withDataLoader = (WrappedComponent, url) => {
 
     async componentDidMount() {
       try {
-        const response = await fetch(url);
+        const response = await fetch(url);// Отправляем запрос на указанный URL
         if (!response.ok) {
-          throw new Error('Не могу найти!');
+          throw new Error('Не могу найти!'); // Если ответ не успешен, выбрасываем ошибку
         }
-        const data = await response.json();
-        this.setState({ data: data.meals, isLoading: false }); 
+        const data = await response.json();// Парсим JSON из ответа
+        this.setState({ data: data.meals, isLoading: false }); // Устанавливаем данные и завершаем загрузку
       } catch (error) {
-        this.setState({ error, isLoading: false });
+        this.setState({ error, isLoading: false });// В случае ошибки устанавливаем ошибку и завершаем загрузку
       }
     }
 

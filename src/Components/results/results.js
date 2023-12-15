@@ -16,7 +16,7 @@ export default class Results extends Component {
       <div className="results-page">
         <h2>Ваши Достижения</h2>
         <ul>
-          {achievements.map(achievement => (
+          {achievements.map(achievement => (//проходим с помощью .map по каждому элементу achievements (и выводим полученные данные )
             <li key={achievement.id}>
               <h3>{achievement.title}</h3>
               <p>{achievement.value}</p>

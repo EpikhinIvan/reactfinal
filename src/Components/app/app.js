@@ -15,11 +15,11 @@ import Contacts from '../contacts';
 export default class App extends Component {
   render() {
     return (
-      <Router>
+      <Router>{/* Обертка для использования маршрутизации */}
         <div> 
           <AppHeader />
-          <Routes>
-            <Route path="/" element={<Glavnaya />} />
+          <Routes>{/* Обертка для определения маршрутов */}
+            <Route path="/" element={<Glavnaya />} />{/* Маршруты страницы */}
             <Route path="/train" element={<TrainPage />} />
             <Route path="/nutrition" element={<Nutrition />} />
             <Route path="/results" element={<Results />} />
