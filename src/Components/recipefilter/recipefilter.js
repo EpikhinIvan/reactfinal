@@ -9,5 +9,5 @@ const RecipeFilter = ({ onCategoryChange }) => {
         </select>// меняет выбор категории
     );
 };
-
+ 
 export default RecipeFilter;

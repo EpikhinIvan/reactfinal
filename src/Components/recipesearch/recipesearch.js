@@ -11,4 +11,4 @@ const RecipeSearch = ({ onSearchChange }) => {
     );
 };
 
-export default RecipeSearch;
+export default RecipeSearch; 

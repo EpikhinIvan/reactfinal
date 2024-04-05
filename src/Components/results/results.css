@@ -1,30 +1,49 @@
 .results-page {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-  }
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 100px auto;
+  max-width: 600px;
   
-  .results-page h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 30px;
-  }
-  
-  .results-page ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .results-page li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-  }
-  
-  .results-page li h3 {
-    margin-top: 0;
-  }
-  
+}
+
+.bmi-calculation {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.bmi-calculation label {
+  margin-bottom: 10px;
+}
+
+.bmi-calculation input {
+  padding: 8px;
+  font-size: 16px;
+}
+
+.bmi-calculation button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.bmi-result {
+  margin-top: 20px;
+}
+
+.bmi-result h3 {
+  margin-bottom: 10px;
+}
+
+.bmi-result h4 {
+  color: #ff9800;
+}
+
+.bmi-result p {
+  margin-top: 0;
+}

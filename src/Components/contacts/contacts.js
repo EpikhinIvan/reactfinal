@@ -1,69 +1,96 @@
-import React, { Component, createRef } from 'react'
+import React, { Component } from 'react';
 import './contacts.css';
 
 export default class Contacts extends Component {
-  constructor(props) {
-    super(props);
-    this.messageRef = createRef(); 
-    this.state = {
+  
+    state = {
       name: '',
       email: '',
-     
+      message: '', 
     };
-  }
-
   
-  handleChange = (e) => { // Обработчик изменения значений в полях формы
+
+  handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  handleSubmit = (e) => { // Обработчик отправки формы
+  handleSubmit = (e) => {
     e.preventDefault();
-    const message = this.messageRef.current.value; 
-    const { name, email } = this.state;
+
+    const { name, email, message } = this.state;
+
+    if (!name || !email || !message) {
+      alert('Заполните все поля формы.'); 
+      return;
+    }
+
     const formData = { name, email, message };
     console.log(formData);
+
     alert('Сообщение отправлено!');
-    this.setState({ name: '', email: '' }); 
-    this.messageRef.current.value = ''; 
+    this.setState({ name: '', email: '', message: '' });
   };
 
   render() {
-    const { name, email } = this.state;
+    const { name, email, message } = this.state;
 
     return (
-      <div className="Contacts">
+      <div className="contacts">
+        <div className='background-contacts'><h1>Свяжитесь с нами</h1></div>
 
-        <div className="form-container">
+        <div className='container-contacts'>
 
-          <h2>Обратная связь</h2>
+          <div className="form-container">
 
-          <form onSubmit={this.handleSubmit}>
+            <h2>Обратная связь</h2>
 
-            <div className="form-group">
-              <label>Имя:</label>
-              <input type="text" name="name" value={name} onChange={this.handleChange} className="form-control" />
-            </div>
+            <form className='form-contacts' onSubmit={this.handleSubmit}>
 
-            <div className="form-group">
-              <label>Email:</label>
-              <input type="email" name="email" value={email} onChange={this.handleChange} className="form-control" />
-            </div>
+              <div className="form-group">
+                <input
+                  type="text"
+                  name="name" 
+                  value={name}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder='Name'
 
-            <div className="form-group">
-              <label>Сообщение:</label>
-              <textarea ref={this.messageRef} className="form-control"></textarea> 
-            </div>
+                />
+              </div>
 
-            <button type="submit" className="submit-button">Отправить</button>
-            
-          </form>
-        </div>
+              <div className="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder='E-mail'
 
-        <div className="contact-info">
-          <h3>Контактная информация</h3>
-          <p>Телефон: +7 (123) 456-78-90</p>
-          <p>Email: info@example.com</p>
+                />
+              </div>
+
+              <div className="form-group">
+                <textarea
+                  name="message" 
+                  value={message}
+                  onChange={this.handleChange}
+                  className="form-control"
+                  placeholder='Message'
+                ></textarea>
+              </div>
+
+              <button type="submit" className="submitbutton">
+                Отправить
+              </button>
+              
+            </form>
+          </div>
+
+          <div className='iframe'>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2885.201464723316!2d-70.32401468451076!3d43.685574858354606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb29b08b2fab279%3A0x18b32384eda545bc!2sThe+Fitness+Factory+(24%2F6.5)!5e0!3m2!1sen!2sus!4v1547175575160" width="550" height="400" frameborder="0" allowfullscreen=""></iframe>
+          </div>
+
         </div>
 
       </div>

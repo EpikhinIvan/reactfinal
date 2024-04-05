@@ -1,15 +1,15 @@
 .training-page {
     text-align: center;
-    padding: 20px;
+    padding: 200px;
 }
 
 .training-card {
     cursor: pointer;
     padding: 20px;
     margin: 20px auto;
-    border: 1px solid #e4ecfc;
+    border: 1px solid white;
     border-radius: 8px;
-    background-color: #e4ecfc;
+    background-color: white;
     width: 50%;
 }
 
@@ -17,7 +17,52 @@
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    width: 50%;
-    background-color: #e4ecfc;
-    border: 1px solid #e4ecfc;
+    width: 40%; 
+    background-color: white;
+    border: 1px solid white;
+  }
+
+.button {
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(66 74 211);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
+
+
+.trainpagebody{
+    background: url('https://fitnessfactorymaine.com/wp-content/uploads/2017/01/slide2_2.jpg');
+    min-height: 100vh;
+} 
+
+h1{
+    color: white;
+}
+
+
+.reset-button {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .reset-button:hover {
+    background-color: #dd3333;
+  }
+
+  .training-session p {
+    white-space: pre-line;
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+  }

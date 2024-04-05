@@ -2,74 +2,93 @@
     font-family: Arial, sans-serif;
 }
 
-.form-container,
-.contact-info {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #f9f9f9;
-}
+
 
 .form-container {
     max-width: 600px;
-    margin: 20px auto;
-}
-
-.contact-info {
-    max-width: 400px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-top:100px;
     margin: 0 auto;
+    background: #dfdfdf;
 }
 
-h2 {
-    color: #333;
-    text-align: center;
-}
 
-form {
+
+.form-contacts {
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
+    width: 400px;
 }
 
 input[type="text"],
 input[type="email"],
 textarea {
-    padding: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     font-size: 16px;
+    width: 100%; 
+    box-sizing: border-box; 
+    background: #eee;
+    resize: none;
 }
 
 textarea {
     height: 100px;
 }
 
-button {
+.submitbutton {
     padding: 10px 20px;
-    border: none;
+    border: solid #dd3333;
     border-radius: 4px;
-    background-color: rgb(66 74 211);
-    color: white;
+    background: #eee;
+
+
+    color: #dd3333;
     font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: rgb(66 74 211);
+.submitbutton:hover {
+    background-color: #dd3333;
+    color: white;
 }
 
-.contact-info h3 {
-    margin-top: 0;
-    color: #333;
+
+.background-contacts{
+    background: url(https://fitnessfactorymaine.com/wp-content/uploads/2018/05/footer-bg.jpg) no-repeat scroll center center / cover;
+    height: 290px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.contact-info p {
-    color: #666;
+.background-contacts h1 {
+    font-size: 32px;
+    color: #ffffff;
+    padding-top: 30px;
+    
 }
+
+.container-contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding: 80px 0 50px;
+    min-width: 1350px;
+    max-width: 400px;
+    
+  }
+
+.form-container h2{
+    margin-bottom: 20px;
+    color: grey;
+}
+  

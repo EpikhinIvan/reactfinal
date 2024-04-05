@@ -1,38 +1,67 @@
 .shop-page {
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .shop-page h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: white;
-    font-size: 30px;
-  }
-  
-  .shop-page ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .shop-page li {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-  }
-  
-  .shop-page li h3 {
-    margin-top: 0;
-  }
-  
-  .shop-page .cart {
-    margin-top: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 4px;
-  }
-  
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  color: black;
+}
+
+.shop-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: white;
+}
+
+.shop-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.shop-page li {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+.shop-page li h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.shopbutton {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(66 74 211);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.shopbutton:hover {
+  background-color: rgb(66 74 211);
+}
+
+.shop-page .cart {
+  position: fixed;
+  top:200px;
+  left: 20px;
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+img{
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+p{
+  margin-bottom: 20px;
+}

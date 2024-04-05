@@ -1,0 +1,55 @@
+.mainbackground{
+    background: url('https://fitnessfactorymaine.com/wp-content/uploads/2017/01/slider_01.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.main-h1{
+    text-align: center;
+    font-size: 57.4312px;
+    color: rgb(255, 255, 255);
+
+}
+
+.title{
+    margin: 0 auto;
+}
+
+.content{ 
+    padding-top: 17em;
+    margin-right:30px;
+
+}
+
+.divbutton{
+    padding-top: 50px;
+    margin: 0 auto;
+    width: 200px;
+}
+
+.main-p{
+    color: white;
+    border-radius: 40px;
+    font-size: 17px;
+    border: 3px solid #dd3333;
+    padding: 13px 0;
+    text-align: center;
+    width: 150px;
+}
+
+.main-p:hover{
+    background-color: #dd3333;
+}
+
+
+.main_p{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+    margin-right: 45px;
+
+}
+.main-span{
+    color: #dd3333;
+}

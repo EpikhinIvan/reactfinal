@@ -1,39 +1,56 @@
-import React, { Component } from 'react'
+import React from 'react';
 import './header.css';
-import Submenu from '../submenu/submenu';
+import { Link } from 'react-router-dom';
 
-export default class AppHeader extends Component {
-
+class AppHeader extends React.Component {
   state = {
-    isMenuOpen: false,
+    isAtTop: true,
+    coaches: [
+      'https://fitnessfactorymaine.com/wp-content/uploads/2019/01/FF-Logo-Red-and-Black.png',
+      'https://fitnessfactorymaine.com/wp-content/uploads/2019/01/FF-Logo-Red-and-White.png'
+    ]
   };
+  
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
 
-//создаем метод  который меняет состояние открытости меню 
-  mouseEnter = () => {
-    this.setState({ isMenuOpen: true });
-  };
-//создаем метод  который меняет состояние открытости меню 
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
 
-  mouseLeave = () => {
-    this.setState({ isMenuOpen: false });
+  handleScroll = () => {
+    const isAtTop = window.scrollY === 0;
+    this.setState({ isAtTop });
   };
 
   render() {
-    const { isMenuOpen } = this.state;
+    const { isAtTop, coaches } = this.state;
+    const headerClass = isAtTop ? 'header' : 'header headerScrolled';
 
     return (
-
-      <header className="header">
-        <img src="https://celes.club/pictures/uploads/posts/2023-05/1685233140_celes-club-p-raskraska-kfs-risunok-vkontakte-16.png" alt='lol' className='companyImage'></img>
-        <div className='gym'>Качалка форевер</div>
-        <nav onClick={this.mouseEnter} onMouseLeave={this.mouseLeave}>
-          <img src='https://cdn-icons-png.flaticon.com/512/10024/10024467.png' alt='lol' className='navMenu'></img>
-
-          {isMenuOpen && <Submenu />}
-        </nav>
+      <header className={headerClass} id="header">
+        <div className="headerdiv">
+          <a href="http://localhost:3000/">
+            <img
+              src={isAtTop ? coaches[1] : coaches[0]} 
+              alt="company image"
+              className="companyImage"
+            />
+          </a>
+          <div className="submenu">
+            <Link to="/">Главная страница</Link>
+            <Link to="/train">Тренировки</Link>
+            <Link to="/results">Калькулятор</Link>
+            <Link to="/coach">Тренера</Link>
+            <Link to="/shop">Магазин</Link>
+            <Link to="/advice">Советы</Link>
+            <Link to="/contacts">Обратная связь</Link>
+          </div>
+        </div>
       </header>
-      
     );
   }
 }
 
+export default AppHeader;

@@ -27,5 +27,5 @@ const withDataLoader = (WrappedComponent, url) => {
     }
   };
 };
-
+ 
 export default withDataLoader;
