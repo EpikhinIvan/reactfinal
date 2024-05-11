@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
 
-class TrainingSession extends Component {
-  constructor(props) {
+interface Props {
+  initialTime: number;
+  program: string;
+}
+
+interface State {
+  timerSeconds: number;
+  timerRunning: boolean;
+}
+
+class TrainingSession extends Component<Props, State> {
+  private timer: number | null = null;
+
+  constructor(props: Props) {
     super(props);
     this.state = {
       timerSeconds: props.initialTime,
       timerRunning: false,
     };
-    this.timer = null;
-  }
+  } 
 
   componentDidMount() {
     document.addEventListener('keydown', this.handleKeyPress);
@@ -19,7 +30,7 @@ class TrainingSession extends Component {
     document.removeEventListener('keydown', this.handleKeyPress);
   }
 
-  handleKeyPress = (event) => {
+  handleKeyPress = (event: KeyboardEvent) => {
     if (event.key === 'Enter') {
       this.toggleTimer();
     } else if (event.key === 'Escape') {
@@ -37,7 +48,7 @@ class TrainingSession extends Component {
 
   startTimer = () => {
     if (!this.state.timerRunning) {
-      this.timer = setInterval(() => {
+      this.timer = window.setInterval(() => {
         this.setState(prevState => ({ timerSeconds: prevState.timerSeconds - 1 }));
       }, 1000);
       this.setState({ timerRunning: true });
@@ -45,9 +56,11 @@ class TrainingSession extends Component {
   };
 
   stopTimer = () => {
-    clearInterval(this.timer);
-    this.timer = null;
-    this.setState({ timerRunning: false });
+    if (this.timer) {
+      window.clearInterval(this.timer);
+      this.timer = null;
+      this.setState({ timerRunning: false });
+    }
   };
 
   resetTimer = () => {
@@ -68,7 +81,7 @@ class TrainingSession extends Component {
           {this.state.timerRunning ? 'Пауза' : 'Старт'}
         </button>
         <button className='button' onClick={this.resetTimer}>Сброс</button>
-      </div> 
+      </div>
     );
   }
 }

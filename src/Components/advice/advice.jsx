@@ -10,52 +10,42 @@ export default class Advice extends Component {
       { id: 4, title: 'Пить воду', content: 'Регулярное питье важно для поддержания водного баланса в организме.', link: 'https://www.bbc.com/russian/vert-fut-47880538' },
       { id: 5, title: 'Избегать стресса', content: 'Стресс негативно влияет на здоровье. Практикуйте методы релаксации.', link: 'https://m.sport.business-gazeta.ru/article/256467' },
     ],
-    isMenuOpen: false,
     selectedTip: null,
   };
 
-  mouseOpen = (id) => {
+  toggleTip = (id) => {
     this.setState((prevState) => ({
-      isMenuOpen: !prevState.isMenuOpen,
-      selectedTip: id,
+      selectedTip: prevState.selectedTip === id ? null : id,
     }));
   };
 
- 
-
-  toggleMenu = () => {
-    this.setState((prevState) => ({ 
-      isMenuOpen: !prevState.isMenuOpen }));
-  };
-
   render() {
-    const { tips, selectedTip } = this.state; 
+    const { tips, selectedTip } = this.state;
 
     return (
       <div className="tips-page">
         <div className='background-tips'><h1>Советы</h1></div>
 
         <div className='Joker'>
-          <h2 className="tips-heading">Советы для здоровья и фитнеса</h2>
-
           <div className='ul-advice'>
             <ul className="tips-list">
               {tips.map(tip => (
+                <>
                 <li key={tip.id} className={`tip`}>
-                  <div className="tip-header">
+                  <div className="tip-header" onClick={() => this.toggleTip(tip.id)}>
                     <h3 className="tip-title">{tip.title}</h3>
-                    <button className='btn-tip' onClick={() => this.mouseOpen(tip.id)}>+</button>
+                    <p className='ppp'>{selectedTip === tip.id ? '-' : '+'}</p>
                   </div>
 
                   {selectedTip === tip.id && (
-                    <p className="tip-content">
-                      {tip.content}{' '}
-                      <a href={tip.link} target="_blank" rel="noopener noreferrer">
-                        Подробнее
-                      </a>
-                    </p>
+                    <div className="tip-content">
+                      <p className='under'>{tip.content}</p>
+                      <button className='gob' ><a href={tip.link} target="_blank" rel="noopener noreferrer">Подробнее</a></button>
+                    </div>
                   )}
                 </li>
+                <hr></hr>
+                </>
               ))}
             </ul>
           </div>

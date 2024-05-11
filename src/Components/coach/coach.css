@@ -46,3 +46,13 @@
 
 }
 
+
+.submit{
+  color: white;
+  background-color: #ff0f0f;
+
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  
+}

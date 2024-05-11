@@ -1,16 +1,10 @@
 import React from 'react';
 import './header.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux'; 
+import { setIsAtTop } from '../../redux/action';
 
 class AppHeader extends React.Component {
-  state = {
-    isAtTop: true,
-    coaches: [
-      'https://fitnessfactorymaine.com/wp-content/uploads/2019/01/FF-Logo-Red-and-Black.png',
-      'https://fitnessfactorymaine.com/wp-content/uploads/2019/01/FF-Logo-Red-and-White.png'
-    ]
-  };
-  
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
@@ -21,11 +15,11 @@ class AppHeader extends React.Component {
 
   handleScroll = () => {
     const isAtTop = window.scrollY === 0;
-    this.setState({ isAtTop });
+    this.props.setIsAtTop(isAtTop);
   };
 
   render() {
-    const { isAtTop, coaches } = this.state;
+    const { isAtTop, coaches } = this.props;
     const headerClass = isAtTop ? 'header' : 'header headerScrolled';
 
     return (
@@ -53,4 +47,15 @@ class AppHeader extends React.Component {
   }
 }
 
-export default AppHeader;
+const mapStateToProps = (state) => {
+  return {
+    isAtTop: state.header.isAtTop,
+    coaches: state.header.coaches
+  };
+};
+
+const mapDispatchToProps = {
+  setIsAtTop
+};  
+
+export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);

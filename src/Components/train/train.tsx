@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import './train.css';
-import TrainingWrapper from '../trainingwrapper/trainingwrapper';
-import TrainingSession from '../trainingsession/trainingsession';
+import TrainingWrapper from '../trainingwrapper/trainingwrapper.tsx';
+import TrainingSession from '../trainingsession/trainingsession.tsx';
 
-export default class Train extends Component {
-  state = {
+interface Training {
+  time: number;
+  program: string;
+}
+
+interface TrainState {
+  selectedTraining: Training | null;
+  showTraining: boolean;
+}
+
+export default class Train extends Component<{}, TrainState> {
+  state: TrainState = {
     selectedTraining: null,
     showTraining: false,
   };
 
-  startTraining = (selectedTraining) => {
+  startTraining = (selectedTraining: Training) => {
     this.setState({ showTraining: true, selectedTraining });
-  };
+  }; 
 
   resetTraining = () => {
     this.setState({ showTraining: false, selectedTraining: null });
@@ -28,8 +38,8 @@ export default class Train extends Component {
           ) : (
             <div>
               <TrainingSession
-                initialTime={selectedTraining.time}
-                program={selectedTraining.program}
+                initialTime={selectedTraining?.time || 0}
+                program={selectedTraining?.program || ''}
               />
               <button className="reset-button" onClick={this.resetTraining}>
                 Сбросить тренировку

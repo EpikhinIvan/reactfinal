@@ -1,10 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, ChangeEvent } from 'react';
 import './nutrition.css';
 import RecipeSearch from '../recipesearch/recipesearch';
 import RecipeFilter from '../recipefilter/recipefilter';
 
-export default class Nutrition extends Component {
-  state = {
+interface Recipe {
+  id: number;
+  title: string;
+  ingredients: string[];
+  category: string;
+  image: string;
+}
+
+interface State {
+  searchQuery: string;
+  selectedCategory: string;
+  data: Recipe[] | null;
+  isLoading: boolean;
+  error: Error | null;
+}
+
+export default class Nutrition extends Component<{}, State> {
+  state: State = {
     searchQuery: '',
     selectedCategory: 'Все',
     data: null,
@@ -21,7 +37,7 @@ export default class Nutrition extends Component {
       if (!response.ok) {
         throw new Error('Не могу найти!');
       }
-      const data = await response.json();
+      const data: { results: Recipe[] } = await response.json();
       this.setState({ data: data.results, isLoading: false });
     } catch (error) {
       this.setState({ error, isLoading: false });
@@ -37,8 +53,8 @@ export default class Nutrition extends Component {
 
     return (
       <div className="nutrition">
-        <RecipeSearch onSearchChange={query => this.setState({ searchQuery: query })} />
-        <RecipeFilter onCategoryChange={category => this.setState({ selectedCategory: category })} />
+        <RecipeSearch onSearchChange={(query: string) => this.setState({ searchQuery: query })} />
+        <RecipeFilter onCategoryChange={(category: string) => this.setState({ selectedCategory: category })} />
         <ul>
           {filteredRecipes.map(recipe => (
             <li key={recipe.id}>
@@ -49,7 +65,6 @@ export default class Nutrition extends Component {
           ))}
         </ul>
       </div>
-
     );
   }
 }

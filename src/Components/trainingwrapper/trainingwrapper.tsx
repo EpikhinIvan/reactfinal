@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import TrainingCard from '../trainingcard/trainingcard';
+import TrainingCard from '../trainingcard/trainingcard.tsx';
 
-export default class TrainingWrapper extends Component {
-  availableTrainings = [
+interface Training {
+  id: number;
+  name: string;
+  time: number;
+  program: string;
+} 
+
+interface Props {
+  onStartTraining: (training: Training) => void;
+}
+
+export default class TrainingWrapper extends Component<Props> {
+  availableTrainings: Training[] = [
     {
       id: 1,
       name: 'Тренировка на бицепс',
@@ -13,7 +24,7 @@ export default class TrainingWrapper extends Component {
       id: 2,
       name: 'Тренировка на грудь',
       time: 45,
-      program: '1. Жим штанги лежа: 4x8\n2. Жим гантелей: 3x10\n3. Разводка га нтелей: 3x12',
+      program: '1. Жим штанги лежа: 4x8\n2. Жим гантелей: 3x10\n3. Разводка гантелей: 3x12',
     },
   ];
 
@@ -22,7 +33,7 @@ export default class TrainingWrapper extends Component {
 
     return (
       <div className='petya'>
-          <h1>Выберите тренировку</h1>
+        <h1>Выберите тренировку</h1>
         {this.availableTrainings.map(training => (
           <TrainingCard
             key={training.id}
